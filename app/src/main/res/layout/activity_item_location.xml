@@ -1,0 +1,101 @@
+
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/ItemEditText"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Item"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/ItemSearch"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/ItemEditText"
+        android:onClick="onClick"
+        android:text="Search"
+        android:layout_toRightOf="@+id/ItemEditText" />
+
+
+    <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ItemSearch" />
+
+
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.android.events.ItemLocation">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:background="@android:color/darker_gray"
+            android:orientation="vertical"
+            app:behavior_hideable="false"
+            app:behavior_peekHeight="80dp"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+            <TextView
+               android:id="@+id/meters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_gravity="center"
+                android:text="0 meters"
+                android:textSize="20dp"
+                android:textColor="@android:color/background_dark" />
+
+            <ProgressBar
+               android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"/>
+
+            <SeekBar
+                android:id="@+id/RadiusBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:max="200"
+                android:progress="0"
+                android:min="10"/>
+
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
+    <!--<fragment-->
+        <!--android:name="com.example.android.events.ItemLocation"-->
+        <!--android:id="@+id/fooFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+
+</RelativeLayout>
+
+
+
